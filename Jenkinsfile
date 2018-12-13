@@ -5,10 +5,10 @@ pipeline {
         } 
     }
     stages {
-        stage('Teste') {
+        stage('Build') {
             steps {
                 sh 'echo "Hello World"'
-                sh 'ls'
+                //sh 'docker build -t helloworld:stable -f .\\HelloWorld\\HelloWorld\\Dockerfile .\\HelloWorld\\'
             }
         }
     }
