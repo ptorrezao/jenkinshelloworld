@@ -1,4 +1,9 @@
 pipeline {
+    agent { 
+        docker { 
+            image 'docker' 
+        } 
+    }
     stages {
         stage('Teste') {
             steps {
