@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Build Docker Images') {
       steps {
-        sh 'chmod 777 ./buildDockerImage.sh'
-        sh './buildDockerImage.sh'
+        sh 'chmod 777 ./CI/buildDockerImage.sh'
+        sh './CI/buildDockerImage.sh'
       }
     }
   }
