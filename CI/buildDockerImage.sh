@@ -1,1 +1,4 @@
- docker-compose build 
+#!/bin/bash
+set -ev
+
+docker-compose build 

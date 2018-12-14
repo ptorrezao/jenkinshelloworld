@@ -8,8 +8,8 @@ pipeline {
     }
     stage('Docker Registry Login') {
       steps {
-        withCredentials([string(credentialsId: 'my-pass', variable: 'PW1')]) {
-            echo "My password is '${PW1}'!"
+       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'DockerHub_Login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh './CI/loginDocker.sh $USERNAME $PASSWORD'
         }
       }
     }
