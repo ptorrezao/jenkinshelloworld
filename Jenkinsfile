@@ -1,12 +1,11 @@
 pipeline {
-    agent {
-        docker { image 'node:7-alpine' }
+  agent any
+  stages {
+    stage('Test') {
+      steps {
+        sh 'chmod 777 ./buildDockerImage.sh'
+        sh './buildDockerImage.sh'
+      }
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
+  }
 }
