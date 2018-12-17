@@ -4,7 +4,7 @@ pipeline {
     stage('Docker Registry Login') {
       steps {
        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'DockerHub_Login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-            sh 'docker login -u="$USERNAME" -p="$PASSWORD"'
+            sh 'docker login repo.treescale.com -u="$USERNAME" -p="$PASSWORD"'
         }
       }
     }

@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   helloworld:
-    image: ptorrezao/helloworld
+    image: repo.treescale.com/ptorrezao/helloworld
     ports:
       - "80"
     build:
